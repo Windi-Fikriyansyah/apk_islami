@@ -4,121 +4,99 @@
 
 @section('content')
 <div class="space-y-8">
-    <!-- Hero AI Section -->
+    <!-- Hero Section -->
     <div class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-800 rounded-3xl p-8 lg:p-12 text-white shadow-xl shadow-indigo-100">
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl"></div>
         
-        <div class="relative grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-white/20">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                    Bertenaga Kecerdasan Buatan
-                </div>
-                <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                    Halo, {{ auth()->user()->name }}!<br>
-                    <span class="text-indigo-200 text-3xl lg:text-4xl">Siap Membuat Materi Baru?</span>
-                </h1>
-                <p class="text-lg text-indigo-100 mb-8 leading-relaxed max-w-md">
-                    Gunakan algoritma AI tercanggih untuk menghasilkan konten dakwah yang mendalam, terstruktur, dan relevan dengan audiens Anda.
+        <div class="relative max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold tracking-wider uppercase mb-6 border border-white/20">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                Halo, {{ auth()->user()->name }}!
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
+                Islamic Masterpiece <span class="text-indigo-200">Asisten Islami Cerdas</span>
+            </h1>
+            <div class="space-y-6 text-indigo-50 leading-relaxed text-lg">
+                <p>
+                    Islamic Masterpiece adalah aplikasi asisten Islami yang membantu pengguna memahami dan mengamalkan ajaran Islam dengan mudah. Aplikasi ini menyediakan jawaban dan materi keislaman yang merujuk pada Al-Qur’an, hadis sahih, serta penjelasan ulama dari kitab-kitab mu’tabar, disajikan secara jelas, terarah, dan mudah dipahami oleh berbagai kalangan.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <button class="px-6 py-3 bg-white text-indigo-700 font-bold rounded-xl hover:bg-slate-50 transition-all flex items-center gap-2 shadow-lg shadow-indigo-900/20">
-                        <i data-lucide="zap" class="w-5 h-5"></i>
-                        Mulai Generator
-                    </button>
-                    <button class="px-6 py-3 bg-white/10 backdrop-blur-md text-white font-bold rounded-xl border border-white/30 hover:bg-white/20 transition-all">
-                        Riwayat Ceramah
-                    </button>
-                </div>
+                <p>
+                    Tidak hanya menjawab pertanyaan agama, Islamic Masterpiece juga membantu pengguna dalam menyiapkan materi dakwah, mempelajari adab Islami, mendapatkan nasihat kehidupan, mendengarkan Al-Qur’an, serta mengakses berbagai kitab dan literatur Islam dalam satu aplikasi praktis.
+                </p>
+                <p>
+                    Dengan pendekatan yang sistematis dan ramah pengguna, Islamic Masterpiece menjadi aplikasi pendamping bagi ustadz, santri, guru, dan masyarakat umum dalam belajar, berdakwah, dan memperdalam pemahaman Islam.
+                </p>
             </div>
-            
-            <div class="hidden lg:block">
-                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl">
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-                            <div class="w-3 h-3 rounded-full bg-rose-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
-                            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
-                            <span class="text-xs font-mono text-indigo-200 ml-2">ai-engine: v4.0-stable</span>
-                        </div>
-                        <div class="font-mono text-sm space-y-2">
-                            <p class="text-emerald-300">>> Mengidentifikasi tema: "Keutamaan Sabar"</p>
-                            <p class="text-indigo-200">>> Mencari referensi ayat dan hadist...</p>
-                            <p class="text-indigo-200">>> Menyusun struktur pembukaan...</p>
-                            <div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                                <div class="h-full bg-emerald-400 w-3/4 animate-pulse"></div>
-                            </div>
-                            <p class="text-white pt-2 italic">"Sabar adalah cahaya yang menuntun di kala gelap..."</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a href="{{ route('data.ceramah') }}" class="px-8 py-4 bg-white text-indigo-700 font-bold rounded-xl hover:bg-slate-50 transition-all flex items-center gap-2 shadow-lg shadow-indigo-900/20">
+                    Buka Fitur Utama
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Feature Grid -->
-    <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-300 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <i data-lucide="book-open" class="w-6 h-6"></i>
+    <!-- Features Section -->
+    <div class="space-y-6">
+        <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-3">
+            <span class="w-8 h-1 bg-indigo-600 rounded-full"></span>
+            Fitur Islamic Masterpiece
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">1</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Tanya Jawab Islam</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Menjawab berbagai pertanyaan seputar aqidah, ibadah, muamalah, dan kehidupan berdasarkan Al-Qur’an, hadis sahih, dan penjelasan ulama.</p>
             </div>
-            <h3 class="font-bold text-slate-800 mb-2">Referensi Terpercaya</h3>
-            <p class="text-sm text-slate-500">AI kami dilatih dengan ribuan kitab dan materi dakwah shahih untuk hasil yang akurat.</p>
-        </div>
 
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-300 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <i data-lucide="layout" class="w-6 h-6"></i>
+            <!-- Feature 2 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group border-t-4 border-t-indigo-500">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">2</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Materi Dakwah Otomatis</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Membantu membuat materi kultum, ceramah, dan khutbah secara cepat dan terstruktur.</p>
             </div>
-            <h3 class="font-bold text-slate-800 mb-2">Struktur Otomatis</h3>
-            <p class="text-sm text-slate-500">Mulai dari Muqaddimah, Isi, hingga Penutup disusun secara sistematis dan rapi.</p>
-        </div>
 
-        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-indigo-300 transition-colors group">
-            <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <i data-lucide="languages" class="w-6 h-6"></i>
+            <!-- Feature 3 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">3</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Kisah Adab Islami</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Menyajikan dan membuat cerita tentang adab dan akhlak Islami yang mudah dipahami.</p>
             </div>
-            <h3 class="font-bold text-slate-800 mb-2">Beragam Mood</h3>
-            <p class="text-sm text-slate-500">Sesuaikan gaya bahasa: Formal, Santai, atau Menyentuh Hati sesuai target audiens.</p>
+
+            <!-- Feature 4 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">4</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Konsultasi Islami</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Ruang refleksi dan konsultasi untuk mendapatkan nasihat kehidupan berdasarkan nilai-nilai Islam.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group border-t-4 border-t-indigo-500">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">5</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Audio Qur'an</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Mendengarkan bacaan Al-Qur’an (murattal) dengan mudah kapan saja.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all group">
+                <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 font-bold text-xl">6</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 tracking-tight">Perpustakaan Islam</h3>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Koleksi kitab dan buku Islam dalam format digital (PDF) yang dapat dibaca langsung dalam aplikasi.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Generator Interface -->
-    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-        <div class="px-8 py-6 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
-            <h3 class="font-bold text-slate-800">AI SermoGenerator</h3>
-            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-bold rounded-full">Mode Aktif</span>
-        </div>
-        <div class="p-8">
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="grid gap-6 md:grid-cols-2">
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Tema Ceramah</label>
-                        <input type="text" placeholder="Contoh: Manfaat Sedekah" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 mb-2">Durasi (Menit)</label>
-                        <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all">
-                            <option>5 - 10 Menit</option>
-                            <option>15 - 20 Menit</option>
-                            <option>30+ Menit</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Target Audiens</label>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="px-4 py-2 rounded-full border border-slate-200 text-sm font-medium hover:bg-indigo-50 hover:text-indigo-600 transition-all">Remaja/Millenial</button>
-                        <button class="px-4 py-2 rounded-full border border-indigo-600 bg-indigo-50 text-indigo-600 text-sm font-medium">Umum/Jamaah Masjid</button>
-                        <button class="px-4 py-2 rounded-full border border-slate-200 text-sm font-medium hover:bg-indigo-50 hover:text-indigo-600 transition-all">Anak-anak</button>
-                    </div>
-                </div>
-                <button class="w-full py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all flex items-center justify-center gap-3">
-                    <i data-lucide="wand-2" class="w-5 h-5"></i>
-                    Generate Draft Ceramah
-                </button>
-            </div>
+    <!-- Final Section -->
+    <div class="bg-slate-900 rounded-3xl p-10 lg:p-16 text-white text-center space-y-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(79,70,229,0.1),transparent)]"></div>
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+            <p class="text-indigo-300 font-bold text-sm uppercase tracking-widest">Penutup</p>
+            <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-medium">
+                Dengan berbagai fitur yang tersedia, Islamic Masterpiece hadir sebagai aplikasi yang memudahkan umat Islam dalam belajar, memahami, dan menyampaikan ajaran Islam secara praktis dalam satu platform. Melalui rujukan Al-Qur’an, hadis sahih, dan kitab-kitab ulama mu’tabar, aplikasi ini diharapkan menjadi pendamping yang bermanfaat bagi ustadz, santri, guru, maupun masyarakat umum dalam memperdalam ilmu, menyiapkan materi dakwah, serta mengamalkan nilai-nilai Islam dalam kehidupan sehari-hari.
+            </p>
         </div>
     </div>
 </div>

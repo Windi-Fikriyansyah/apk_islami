@@ -19,9 +19,9 @@ class CeramahController extends Controller
             'tema' => 'required',
         ]);
 
-        $apiKey = env('OPENROUTER_API_KEY');
+        $apiKey = config('services.openrouter.api_key');
         if (!$apiKey || $apiKey === 'your_api_key_here') {
-            return response()->json(['error' => 'API Key OpenRouter belum dikonfigurasi di .env'], 500);
+            return response()->json(['error' => 'API Key OpenRouter belum dikonfigurasi di config/services.php atau .env'], 500);
         }
 
         $prompt = $this->buildPrompt($request->all());
@@ -33,7 +33,7 @@ class CeramahController extends Controller
                 'HTTP-Referer' => config('app.url'),
                 'X-Title' => config('app.name'),
             ])->timeout(60)->post('https://openrouter.ai/api/v1/chat/completions', [
-                'model' => 'arcee-ai/trinity-large-preview:free',
+                'model' => 'nvidia/nemotron-3-nano-30b-a3b:free',
                 'messages' => [
                     ['role' => 'system', 'content' => 'Anda adalah pakar pembuat konten dakwah Islam yang kompeten, bijaksana, dan memiliki kedalaman ilmu agama.'],
                     ['role' => 'user', 'content' => $prompt]
@@ -43,9 +43,27 @@ class CeramahController extends Controller
 
             if ($response->successful()) {
                 $result = $response->json();
+                $fullContent = $result['choices'][0]['message']['content'] ?? '';
+                
+                // Clean up thinking process tags if present (common in thinking models)
+                $fullContent = preg_replace('/<thought>.*?<\/thought>/s', '', $fullContent);
+                
+                // Misalkan baris pertama adalah judul
+                $lines = explode("\n", ltrim($fullContent));
+                $title = array_shift($lines);
+                
+                // Bersihkan markdown dari judul
+                $title = trim(str_replace(['#', '*', '_'], '', $title));
+                
+                // Gabungkan sisa konten dan bersihkan simbol heading (##)
+                $content = implode("\n", $lines);
+                $content = preg_replace('/^#+\s+/m', '', $content); // Hapus # di awal baris
+                $content = str_replace(['**', '##'], '', $content); // Hapus bold dan simbol h2
+
                 return response()->json([
-                    'content' => $result['choices'][0]['message']['content'] ?? 'Gagal menghasilkan konten.',
-                    'title' => $request->tema
+                    'success' => true,
+                    'title' => $title,
+                    'content' => trim($content),
                 ]);
             }
 
@@ -58,33 +76,31 @@ class CeramahController extends Controller
 
     private function buildPrompt($data)
     {
-        $jenis = $data['jenis_konten'];
-        $tema = $data['tema'];
-        $detail = $data['detail'] ?? 'Tidak ada detail tambahan';
-        $madzhab = $data['madzhab'] ?? 'Umum';
-        $gaya = $data['gaya'] ?? 'Formal';
-        $audiens = $data['audiens'] ?? 'Umum';
-        $bahasa = $data['bahasa'] ?? 'Bahasa Indonesia';
-        $panjang = $data['panjang'] ?? 'Standar';
-        $dalil = isset($data['dalil']) && $data['dalil'] ? 'Sertakan ayat Al-Qur\'an dan Hadist yang relevan (lengkap dengan teks Arab dan artinya)' : 'Tanpa menyertakan teks dalil secara eksplisit';
+        $dalilInstruction = "";
+        if (($data['dalil_type'] ?? 'Minimal') !== 'Minimal') {
+            $dalilInstruction = "Sertakan dalil dari {$data['dalil_type']}. WAJIB menyertakan Teks Arab asli yang berharakat, diikuti dengan terjemahan dan penjelasan singkatnya.";
+        }
 
-        return "Buatlah konten dakwah dengan spesifikasi sebagai berikut:
-- Jenis Konten: $jenis
-- Judul/Tema Utama: $tema
-- Detail/Pesan Khusus: $detail
-- Rujukan Madzhab: $madzhab
-- Gaya Bahasa: $gaya
-- Target Audiens: $audiens
-- Bahasa Output: $bahasa
-- Panjang Konten: $panjang
-- Kelengkapan Dalil: $dalil
+        return "Buatlah konten {$data['jenis_konten']} yang sangat berkualitas dengan detail sebagai berikut:
 
-Struktur Konten:
-1. Pembukaan (Muqaddimah) yang sesuai.
-2. Isi Konten yang terstruktur rapi.
-3. Dalil yang relevan (jika diminta).
-4. Penutup dan Kesimpulan.
+        1. TOPIK UTAMA: {$data['tema']}
+        2. DETAIL TAMBAHAN: " . ($data['detail'] ?? 'Sesuaikan dengan topik utama secara bijaksana.') . "
+        3. GAYA BAHASA: " . ($data['gaya'] ?? 'Formal') . "
+        4. TARGET AUDIENS: " . ($data['audiens'] ?? 'Umum') . "
+        5. MADZHAB RUJUKAN: " . ($data['madzhab'] ?? 'Syafi\'i') . "
+        6. BAHASA OUTPUT: " . ($data['bahasa'] ?? 'ID Bahasa Indonesia') . "
+        7. ESTIMASI PANJANG: " . ($data['panjang'] ?? 'Sedang') . "
 
-Gunakan format markdown yang menarik untuk output.";
+        STRUKTUR KONTEN:
+        - Baris Pertama: Tulis Judul yang menarik tanpa simbol Markdown (Tanpa # atau *).
+        - Pembukaan: Salam dan muqaddimah singkat (Gunakan teks Arab untuk salam/hamdalah jika sesuai).
+        - Isi: Sampaikan poin-poin utama dengan mendalam, menyentuh hati, dan edukatif.
+        - DALIL: {$dalilInstruction}
+        - Penutup: Kesimpulan, doa singkat (Teks Arab + Terjemahan), dan salam penutup.
+
+        INSTRUKSI KHUSUS:
+        - Jangan gunakan simbol Markdown seperti # atau ## atau **. Gunakan spasi atau baris baru untuk pemisahan bagian.
+        - Fokus pada kedalaman materi dan keakuratan sesuai Madzhab " . ($data['madzhab'] ?? 'Syafi\'i') . ".
+        - Pastikan Teks Arab ditulis dengan benar dan berharakat lengkap.";
     }
 }

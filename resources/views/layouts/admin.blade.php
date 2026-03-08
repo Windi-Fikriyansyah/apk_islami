@@ -49,7 +49,7 @@
                         <div class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-600 text-white group-hover:bg-indigo-700 transition-colors">
                             <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-xl font-bold tracking-tight text-slate-800">Ceramah<span class="text-indigo-600">App</span></span>
+                        <span class="text-xl font-bold tracking-tight text-slate-800">Islamic<span class="text-indigo-600">Masterpiece</span></span>
                     </a>
                     <button @click="sidebarOpen = false" class="lg:hidden p-1 text-slate-500 hover:text-slate-900">
                         <i data-lucide="x" class="w-6 h-6"></i>
@@ -73,11 +73,27 @@
                         @auth
                             <a href="{{ route('data.ceramah') }}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg {{ request()->routeIs('data.ceramah') ? 'bg-indigo-50 text-indigo-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900' }}">
                                 <i data-lucide="mic" class="w-4 h-4"></i>
-                                Data Ceramah
+                                Materi Dakwah Otomatis
                             </a>
-                            <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
-                                <i data-lucide="users" class="w-4 h-4"></i>
-                                Penceramah
+                            <a href="{{route('tanyajawab.index')}}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                                <i data-lucide="help-circle" class="w-4 h-4"></i>
+                                Tanya Jawab Islam
+                            </a>
+                            <a href="{{route('kisah_adab.index')}}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                                <i data-lucide="book-open" class="w-4 h-4"></i>
+                                Kisah Adab Islami
+                            </a>
+                            <a href="{{route('konsultasi.index')}}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                                Konsultasi Islami
+                            </a>
+                            <a href="{{route('audio_quran.index')}}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                                <i data-lucide="music" class="w-4 h-4"></i>
+                                Audio Qur'an
+                            </a>
+                            <a href="{{route('perpustakaan.index')}}" class="flex items-center gap-3 px-3 py-2 text-sm font-medium transition-all rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                                <i data-lucide="library" class="w-4 h-4"></i>
+                                Perpustakaan Islam
                             </a>
                         @endauth
                     </div>
@@ -143,7 +159,7 @@
                         <div class="flex items-center gap-3">
                             <div class="hidden sm:block text-right">
                                 <p class="text-sm font-medium text-slate-800">{{ auth()->user()->name }}</p>
-                                <p class="text-[10px] font-semibold text-indigo-600 uppercase tracking-tighter leading-none">Standard User</p>
+                                
                             </div>
                             <div class="w-8 h-8 rounded-full bg-slate-200 border border-slate-300 overflow-hidden">
                                 <img src="https://ui-avatars.com/api/?name={{ urlencode(auth()->user()->name) }}" class="w-full h-full object-cover" alt="">
