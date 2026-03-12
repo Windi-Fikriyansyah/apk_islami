@@ -7,8 +7,8 @@
     <!-- Hero Section -->
     <div class="bg-gradient-to-br from-indigo-600 to-violet-700 rounded-[2.5rem] p-8 text-white relative overflow-hidden shadow-xl">
         <div class="relative z-10 space-y-2">
-            <h2 class="text-2xl font-bold">Konsultasi Syariah AI</h2>
-            <p class="text-indigo-100 text-sm max-w-lg">Dapatkan jawaban atas pertanyaan Islam Anda berdasarkan Al-Quran, Hadits, dan penjelasan Ulama muktabar secara instan.</p>
+            <h2 class="text-2xl font-bold">TANYA JAWAB ISLAM</h2>
+            <p class="text-indigo-100 text-sm max-w-lg">Dapatkan jawaban atas berbagai pertanyaan seputar Islam secara instan berdasarkan Al-Qur’an, hadis sahih, Fatwa MUI, dan penjelasan ulama muktabar. Disajikan dengan bahasa yang mudah dipahami, akurat, dan terpercaya, serta menghubungkan khazanah kitab klasik ulama dengan kajian kontemporer dalam satu ensiklopedia Islam yang komprehensif.</p>
         </div>
         <div class="absolute right-0 top-0 -mr-12 -mt-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <i data-lucide="help-circle" class="absolute right-8 bottom-8 w-24 h-24 text-white/10 rotate-12"></i>
@@ -22,7 +22,7 @@
                 <div class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
                     <i data-lucide="message-square" class="w-5 h-5"></i>
                 </div>
-                <h3 class="text-base font-bold text-slate-800">Ajukan Pertanyaan</h3>
+                <h3 class="text-base font-bold text-slate-800">Apa yang ingin Anda tanyakan?</h3>
             </div>
             
             <div class="relative">
@@ -30,14 +30,14 @@
                     x-model="question" 
                     rows="4" 
                     class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-sm text-slate-700 font-medium resize-none shadow-inner"
-                    placeholder="Contoh: Bagaimana cara meningkatkan kekhusyukan dalam shalat menurut Imam Al-Ghazali?"></textarea>
+                    placeholder="Contoh: Bagaimana hukum paylater dalam Islam?"></textarea>
             </div>
 
             <button @click="askQuestion()" 
                     :disabled="loading || question.length < 10"
                     class="w-full py-4 bg-indigo-600 text-white text-base font-bold rounded-2xl hover:bg-indigo-700 transition-all flex items-center justify-center gap-3 shadow-lg shadow-indigo-100 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
                 <template x-if="!loading">
-                    <span class="flex items-center gap-2">🚀 Kirim Pertanyaan</span>
+                    <span class="flex items-center gap-2">🚀 Dapatkan Jawaban</span>
                 </template>
                 <template x-if="loading">
                     <div class="flex items-center gap-3">
@@ -58,7 +58,7 @@
             <div class="px-6 py-4 border-b border-slate-50 flex items-center justify-between bg-slate-50/30">
                 <div class="flex items-center gap-2">
                     <div class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
-                    <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Jawaban AI Pakar</h3>
+                    <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Jawaban Islamic Masterpiece</h3>
                 </div>
                 <template x-if="answer && !loading">
                     <button @click="copyAnswer()" class="text-indigo-600 hover:text-indigo-800 text-xs font-bold flex items-center gap-1 group">

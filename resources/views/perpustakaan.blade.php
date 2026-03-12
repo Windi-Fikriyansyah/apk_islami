@@ -15,84 +15,116 @@
     </div>
 
     <!-- Category Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         
-        <!-- Category Card: Kitab Kuning -->
+        <!-- Category Card 1 -->
         <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
             <div class="absolute top-0 right-0 w-32 h-32 bg-amber-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
-            
             <div class="relative z-10 space-y-8">
                 <div class="w-16 h-16 rounded-3xl bg-amber-500 text-white flex items-center justify-center shadow-lg shadow-amber-500/30 group-hover:rotate-12 transition-transform duration-500">
                     <i data-lucide="book" class="w-8 h-8"></i>
                 </div>
-                
                 <div class="space-y-3">
-                    <h3 class="text-2xl font-black text-slate-900 leading-none">Kitab Kuning</h3>
-                    <p class="text-sm text-slate-500 font-medium leading-relaxed">Koleksi kitab Turats, Fiqh 4 Madzhab, Tauhid, Akhlaq, dan Hadits klasik dalam format PDF.</p>
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">1. QUR'AN, TAFSIR & ILMU TAFSIR</h3>
                 </div>
-                
-                <a href="https://drive.google.com/drive/folders/YOUR_ID_HERE" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-amber-50 text-amber-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-amber-500 group-hover:text-white transition-all">
-                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Perpustakaan
+                <a href="https://drive.google.com/drive/folders/1xj0VFUqebhvo58mbGD79PP48vsx88ICL" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-amber-50 text-amber-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
                 </a>
             </div>
         </div>
 
-        <!-- Category Card: Tafsir & Hadits -->
+        <!-- Category Card 2 -->
         <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
             <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
-            
             <div class="relative z-10 space-y-8">
                 <div class="w-16 h-16 rounded-3xl bg-orange-600 text-white flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:rotate-12 transition-transform duration-500">
                     <i data-lucide="bookmark" class="w-8 h-8"></i>
                 </div>
-                
                 <div class="space-y-3">
-                    <h3 class="text-2xl font-black text-slate-900 leading-none">Tafsir & Hadits</h3>
-                    <p class="text-sm text-slate-500 font-medium leading-relaxed">Referesi utama kitab Tafsir (Ibnu Katsir, Jalalain, dll) dan Kutubus Sittah Hadits Nabawi.</p>
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">2. HADITS & ILMU HADITS</h3>
                 </div>
-                
-                <a href="https://drive.google.com/drive/folders/YOUR_ID_HERE" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-orange-50 text-orange-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all">
-                    <i data-lucide="folder-open" class="w-4 h-4"></i> Pilih Referensi
+                <a href="https://drive.google.com/drive/folders/1aUuwF2zaFkcwN2QGPzkBIMQhRP56t8S8" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-orange-50 text-orange-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-orange-600 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
                 </a>
             </div>
         </div>
 
-        <!-- Category Card: Buku Modern -->
+        <!-- Category Card 3 -->
         <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-rose-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
             <div class="absolute top-0 right-0 w-32 h-32 bg-rose-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
-            
             <div class="relative z-10 space-y-8">
                 <div class="w-16 h-16 rounded-3xl bg-rose-500 text-white flex items-center justify-center shadow-lg shadow-rose-500/30 group-hover:rotate-12 transition-transform duration-500">
-                    <i data-lucide="book-open" class="w-8 h-8"></i>
+                    <i data-lucide="heart" class="w-8 h-8"></i>
                 </div>
-                
                 <div class="space-y-3">
-                    <h3 class="text-2xl font-black text-slate-900 leading-none">E-Book Modern</h3>
-                    <p class="text-sm text-slate-500 font-medium leading-relaxed">Buku-buku islami kontemporer, majalah, kajian sosiologi islam, dan sejarah peradaban.</p>
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">3. TASAWWUF & AKHLAK</h3>
                 </div>
-                
-                <a href="https://drive.google.com/drive/folders/YOUR_ID_HERE" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-rose-50 text-rose-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-rose-500 group-hover:text-white transition-all">
-                    <i data-lucide="folder-open" class="w-4 h-4"></i> Lihat Koleksi
+                <a href="https://drive.google.com/drive/folders/1wd16P0JN29e7p4DS2FI34LasR6zgmCvj" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-rose-50 text-rose-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-rose-500 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
                 </a>
             </div>
         </div>
 
-        <!-- Category Card: Media Dakwah -->
+        <!-- Category Card 4 -->
+        <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+            <div class="relative z-10 space-y-8">
+                <div class="w-16 h-16 rounded-3xl bg-emerald-500 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 group-hover:rotate-12 transition-transform duration-500">
+                    <i data-lucide="scale" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">4. FIQIH</h3>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1QOK1-FZxLMpOynTZIipAifNqP4Z2baJJ" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-emerald-50 text-emerald-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
+                </a>
+            </div>
+        </div>
+
+        <!-- Category Card 5 -->
+        <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-sky-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-sky-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+            <div class="relative z-10 space-y-8">
+                <div class="w-16 h-16 rounded-3xl bg-sky-500 text-white flex items-center justify-center shadow-lg shadow-sky-500/30 group-hover:rotate-12 transition-transform duration-500">
+                    <i data-lucide="pen-tool" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">5. LUGHOH GRAMATIKA B.ARAB</h3>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1F5L0YF_J4tz4vA7fu0o311DhUOPkcclW" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-sky-50 text-sky-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-sky-500 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
+                </a>
+            </div>
+        </div>
+
+        <!-- Category Card 6 -->
         <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
             <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
-            
             <div class="relative z-10 space-y-8">
                 <div class="w-16 h-16 rounded-3xl bg-indigo-600 text-white flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:rotate-12 transition-transform duration-500">
-                    <i data-lucide="video" class="w-8 h-8"></i>
+                    <i data-lucide="shield" class="w-8 h-8"></i>
                 </div>
-                
                 <div class="space-y-3">
-                    <h3 class="text-2xl font-black text-slate-900 leading-none">Materi Dakwah</h3>
-                    <p class="text-sm text-slate-500 font-medium leading-relaxed">Kumpulan template PPT dakwah, video edukasi, pamflet kajian, dan aset visual dakwah.</p>
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">6. AQIDAH</h3>
                 </div>
-                
-                <a href="https://drive.google.com/drive/folders/YOUR_ID_HERE" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-indigo-50 text-indigo-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all">
-                    <i data-lucide="folder-open" class="w-4 h-4"></i> Download Aset
+                <a href="https://drive.google.com/drive/folders/1aVaC8c6Z715tIDyQdPA8qXhszdv3S7if" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-indigo-50 text-indigo-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
+                </a>
+            </div>
+        </div>
+
+        <!-- Category Card 7 -->
+        <div class="group bg-white rounded-[2.5rem] border border-slate-100 p-8 shadow-sm hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-full">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
+            <div class="relative z-10 space-y-8">
+                <div class="w-16 h-16 rounded-3xl bg-violet-500 text-white flex items-center justify-center shadow-lg shadow-violet-500/30 group-hover:rotate-12 transition-transform duration-500">
+                    <i data-lucide="map" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-2xl font-black text-slate-900 leading-none">7. SEJARAH ISLAM</h3>
+                </div>
+                <a href="https://drive.google.com/drive/folders/1iS2ZzyNVAcSFJ0IVaWGTIGijaQokrhCQ" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-violet-50 text-violet-700 font-black text-xs uppercase tracking-widest rounded-2xl group-hover:bg-violet-500 group-hover:text-white transition-all">
+                    <i data-lucide="folder-open" class="w-4 h-4"></i> Buka Folder
                 </a>
             </div>
         </div>

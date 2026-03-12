@@ -1,0 +1,2 @@
+﻿Response:
+{"error":{"message":"nvidia/llama-nemotron-embed-vl-1b-v2:free is an embedding model and cannot be used with the chat/completions endpoint. Use the /embeddings endpoint instead.","code":400},"user_id":"user_39394zBHXP4MOcunebqhmAOHbEB"}

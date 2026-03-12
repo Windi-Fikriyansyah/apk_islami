@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('header', 'Generator Konten Ceramah AI')
+@section('header', 'Buat Materi Dakwah')
 
 @section('content')
 <div x-data="{ 
@@ -74,7 +74,7 @@
                     <div class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600">
                         <i data-lucide="clipboard-list" class="w-5 h-5"></i>
                     </div>
-                    <h3 class="text-base font-bold text-slate-800 tracking-tight">Jenis Konten</h3>
+                    <h3 class="text-base font-bold text-slate-800 tracking-tight">Jenis Konten Dakwah</h3>
                 </div>
                 
                 <div class="relative">

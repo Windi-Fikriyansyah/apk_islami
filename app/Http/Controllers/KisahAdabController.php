@@ -15,7 +15,9 @@ class KisahAdabController extends Controller
     public function generate(Request $request)
     {
         $request->validate([
-            'tokoh' => 'nullable|string',
+            'childName' => 'required|string',
+            'childGender' => 'required|string',
+            'childAge' => 'required|integer',
             'tema' => 'required|string',
         ]);
 
@@ -24,15 +26,33 @@ class KisahAdabController extends Controller
             return response()->json(['error' => 'API Key OpenRouter belum dikonfigurasi.'], 500);
         }
 
-        $prompt = "Buatlah sebuah kisah inspiratif tentang Adab Islami.
-        Tokoh utama: " . ($request->tokoh ?: 'Seorang anak shaleh / Sahabat Nabi') . "
-        Tema/Pesan Moral: {$request->tema}
-        
-        SYARAT KONTEN:
-        1. Gunakan bahasa naratif yang indah, menyentuh hati, dan mudah dipahami anak-anak maupun dewasa.
-        2. Sertakan dalil (Al-Quran/Hadits) yang relevan dengan Teks Arab berharakat dan terjemahannya.
-        3. Tampilkan hikmah atau poin-poin adab yang bisa dipelajari di akhir cerita.
-        4. JANGAN gunakan simbol Markdown seperti # atau **. Gunakan baris baru untuk kerapihan.";
+        $prompt = "Buatkan cerita anak islami 4 halaman tentang {$request->tema}. 
+      
+      PROFIL TOKOH UTAMA:
+      - Nama: {$request->childName}
+      - Jenis Kelamin: {$request->childGender}
+      - Usia: {$request->childAge} Tahun
+      
+      INSTRUKSI KHUSUS:
+      1. Sesuaikan tingkat bahasa dan alur cerita agar sangat RELATE dan SESUAI untuk anak usia {$request->childAge} tahun.
+      2. Jika tokoh {$request->childGender}, pastikan konteks aktivitasnya wajar untuk anak {$request->childGender}.
+      3. Tokoh utama harus menjadi teladan dalam cerita ini.
+      
+      ATURAN PENTING MENGENAI DOA:
+      - Jika cerita mengandung adegan berdoa (misal: makan, tidur, masuk masjid, dll), JANGAN HANYA MENULIS \"dia membaca doa\".
+      - WAJIB TULISKAN bunyi doanya secara LENGKAP dan BENAR (Latin atau Terjemahan yang indah).
+      - Contoh: Jangan tulis \"Andi membaca doa makan\", tapi tulis \"Andi mengangkat tangan dan berdoa, 'Allahumma barik lana fi ma razaqtana wa qina adzaban nar'.\"
+      
+      ATURAN WAJIB EJAAN ISLAMI (JANGAN TYPO):
+      - Gunakan \"Bismillah\" (bukan Bismilah)
+      - Gunakan \"Alhamdulillah\" (bukan Alhamdulilah)
+      - Gunakan \"Subhanallah\" (bukan Subhanalloh)
+      - Gunakan \"Astaghfirullah\" (bukan Astagfirullah)
+      - Gunakan \"Insya Allah\" (bukan Insha Allah)
+      - Gunakan \"Assalamu'alaikum\" (bukan Assalamualaikum)
+
+      Gunakan bahasa yang lembut, mendidik, dan penuh kasih sayang.
+      Kembalikan hanya objek JSON murni: {\"pages\": [{\"text\": \"isi cerita\", \"scenePrompt\": \"cinematic illustration of a child doing [action]\"}]}";
 
         try {
             $response = Http::withHeaders([
@@ -54,12 +74,14 @@ class KisahAdabController extends Controller
                 $content = $result['choices'][0]['message']['content'] ?? '';
                 
                 $content = preg_replace('/<thought>.*?<\/thought>/s', '', $content);
-                $content = preg_replace('/^#+\s+/m', '', $content);
-                $content = str_replace(['**', '##'], '', $content);
+                // Clean markdown json formatting if AI wraps it
+                $content = preg_replace('/```json\s*/i', '', $content);
+                $content = preg_replace('/```\s*$/i', '', $content);
+                $content = trim($content);
 
                 return response()->json([
                     'success' => true,
-                    'content' => trim($content),
+                    'content' => $content,
                 ]);
             }
             return response()->json(['error' => 'Gagal generate kisah.'], 500);

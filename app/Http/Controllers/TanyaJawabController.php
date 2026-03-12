@@ -34,7 +34,7 @@ class TanyaJawabController extends Controller
             ])->timeout(60)->post('https://openrouter.ai/api/v1/chat/completions', [
                 'model' => 'nvidia/nemotron-3-nano-30b-a3b:free',
                 'messages' => [
-                    ['role' => 'system', 'content' => 'Anda adalah AI Pakar Fiqh dan Konsultasi Islam yang menjawab berdasarkan Al-Quran, Sunnah, dan pendapat Ulama Muktabar.'],
+                    ['role' => 'system', 'content' => 'Anda adalah AI Pakar Fiqh dan Konsultasi Islam yang menjawab berdasarkan Al-Quran, Sunnah, Fatwa MUI, dan pendapat Ulama Muktabar.'],
                     ['role' => 'user', 'content' => $prompt]
                 ],
                 'temperature' => 0.5,
@@ -71,8 +71,9 @@ class TanyaJawabController extends Controller
         1. Gunakan Bahasa Indonesia yang sopan dan mudah dipahami.
         2. WAJIB sertakan Dalil relevan (Al-Quran/Hadits).
         3. Dalil WAJIB menyertakan Teks Arab yang berharakat lengkap, diikuti terjemahan.
-        4. Jika ada perbedaan pendapat (khilafiyah), sampaikan secara bijak sesuai Madzhab Syafi'i sebagai referensi utama namun hargai pendapat lain.
-        5. Berikan kesimpulan praktis di akhir jawaban.
-        6. JANGAN gunakan simbol Markdown seperti # atau **. Gunakan baris baru untuk kerapihan.";
+        4. WAJIB sertakan Fatwa MUI (Majelis Ulama Indonesia) yang relevan dengan topik pertanyaan jika tersedia.
+        5. Jika ada perbedaan pendapat (khilafiyah), sampaikan secara bijak sesuai Madzhab Syafi'i sebagai referensi utama namun hargai pendapat lain.
+        6. Berikan kesimpulan praktis di akhir jawaban.
+        7. JANGAN gunakan simbol Markdown seperti # atau **. Gunakan baris baru untuk kerapihan.";
     }
 }

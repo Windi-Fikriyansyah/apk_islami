@@ -27,7 +27,7 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Murottal Lengkap 30 Juz</h3>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Quran dan terjemahan Audio</h3>
                     <p class="text-sm text-slate-500 leading-relaxed font-medium">Koleksi audio Al-Qur'an lengkap dari surah Al-Fatihah hingga An-Nas dalam kualitas jernih.</p>
                 </div>
                 
@@ -38,7 +38,7 @@
         </div>
 
         <!-- Audio Card 2 -->
-        <div class="group bg-white rounded-[2rem] border border-slate-100 p-8 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 relative overflow-hidden">
+        <!-- <div class="group bg-white rounded-[2rem] border border-slate-100 p-8 hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
             
             <div class="relative z-10 space-y-6">
@@ -55,10 +55,10 @@
                     <i data-lucide="external-link" class="w-4 h-4"></i> Pilih Syekh Terkenal
                 </a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Audio Card 3 -->
-        <div class="group bg-white rounded-[2rem] border border-slate-100 p-8 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 relative overflow-hidden">
+        <!-- <div class="group bg-white rounded-[2rem] border border-slate-100 p-8 hover:shadow-2xl hover:shadow-violet-500/10 transition-all duration-300 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-32 h-32 bg-violet-50 rounded-full -mr-16 -mt-16 opacity-50 group-hover:scale-110 transition-transform"></div>
             
             <div class="relative z-10 space-y-6">
@@ -75,7 +75,7 @@
                     <i data-lucide="external-link" class="w-4 h-4"></i> Akses Dengan Terjemahan
                 </a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
