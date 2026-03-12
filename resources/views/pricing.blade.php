@@ -81,9 +81,9 @@
                 </div>
 
                 <div class="mt-10">
-                    <button class="w-full py-4 px-6 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-lg active:scale-[0.98]">
+                    <a href="{{ route('checkout.detail', ['plan' => 'standar']) }}" class="block text-center w-full py-4 px-6 bg-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 transition-all shadow-lg active:scale-[0.98]">
                         PILIH PAKET STANDAR
-                    </button>
+                    </a>
                     <div class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2">
                         <span class="text-[10px] font-bold text-slate-400 flex items-center gap-1">
                             <i data-lucide="check-circle-2" class="w-3 h-3 text-emerald-500"></i> Hemat Biaya
@@ -180,9 +180,9 @@
                 </div>
 
                 <div class="mt-10 relative z-10">
-                    <button class="w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-orange-500/20 active:scale-[0.98]">
+                    <a href="{{ route('checkout.detail', ['plan' => 'premium']) }}" class="block text-center w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-black rounded-2xl hover:brightness-110 transition-all shadow-lg shadow-orange-500/20 active:scale-[0.98]">
                         PILIH PAKET PREMIUM
-                    </button>
+                    </a>
                     <p class="mt-4 text-[10px] text-center font-bold text-slate-500 tracking-wide">Cocok untuk Ustadz, Santri, & Guru</p>
                 </div>
             </div>

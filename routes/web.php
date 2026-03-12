@@ -34,6 +34,12 @@ Route::get('/audio-quran', [AudioQuranController::class, 'index'])->name('audio_
 use App\Http\Controllers\PerpustakaanController;
 Route::get('/perpustakaan', [PerpustakaanController::class, 'index'])->name('perpustakaan.index');
 
+use App\Http\Controllers\TransactionController;
+Route::get('/checkout/detail', [TransactionController::class, 'detail'])->name('checkout.detail');
+Route::post('/checkout/methods', [TransactionController::class, 'methods'])->name('checkout.methods');
+Route::post('/checkout/process', [TransactionController::class, 'process'])->name('checkout.process');
+Route::post('/webhook/tripay', [TransactionController::class, 'webhook'])->name('webhook.tripay');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

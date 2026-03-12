@@ -39,4 +39,15 @@ return [
         'api_key' => env('OPENROUTER_API_KEY'),
     ],
 
+    'tripay' => [
+        'api_key' => env('TRIPAY_API_KEY'),
+        'private_key' => env('TRIPAY_PRIVATE_KEY'),
+        'merchant_code' => env('TRIPAY_MERCHANT_CODE'),
+        'environment' => env('TRIPAY_ENVIRONMENT', 'sandbox'),
+    ],
+
+    'fonnte' => [
+        'api_key' => env('FONNTE_API_KEY'),
+    ],
+
 ];
